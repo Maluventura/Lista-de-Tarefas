@@ -56,7 +56,7 @@ background-color: #F4D8B0;
   font-weight: 500;
   width: 50%;
 }
-@media (max-width:434px) and (min-width:320px)  {
+@media (max-width:434px)  {
   .input_usuario {
     font-size: 14px;
     border: 2px solid #19516d;
@@ -82,6 +82,12 @@ background-color: #F4D8B0;
     cursor: pointer;
     margin-top: 20px;
   }
+  #container_tarefas{
+padding: 0px;
+width: 100%;
+border: none;
+
+  }
 }
 
 .input_usuario:focus {
@@ -106,6 +112,7 @@ background-color: #F4D8B0;
 .item-icone{
 flex:10%;
 text-align: center;
+cursor: pointer;
 
 }
 .item-nome{

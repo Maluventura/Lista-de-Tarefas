@@ -1,7 +1,9 @@
 const input_usuario = document.querySelector(".input_usuario");
 const botaoadd = document.querySelector(".botaoadd");
 const container_tarefa = document.querySelector(".tarefas_adicionadas");
-var  listaTarefas = []
+var  listaTarefas = JSON.parse(localStorage.getItem("listaTarefas")) || []
+console.log(listaTarefas)
+if(listaTarefas.length >0)populatarefas()
 
 function adicionar(){
 
@@ -9,6 +11,7 @@ function adicionar(){
  
  if( (valorImput !== "" ) && ( valorImput !== null) && (valorImput !== undefined)){
   listaTarefas.push({nome:valorImput, concluido:false})
+  atualizalocalstorage()
  input_usuario.value=""
  
  populatarefas()
@@ -60,6 +63,7 @@ function adicionar(){
       let resultado = listaTarefas.filter((item,i)=>indice!==i)
       listaTarefas= resultado
       populatarefas()
+      atualizalocalstorage()
     
    }
  
@@ -76,11 +80,17 @@ function adicionar(){
 function marcarTarefa(index){
 listaTarefas[index].concluido=!listaTarefas[index].concluido
 populatarefas()
+atualizalocalstorage()
 
 }
 
 
+function atualizalocalstorage() {
+  localStorage.setItem("listaTarefas",JSON.stringify(listaTarefas))
 
+
+
+}
 
 
 
