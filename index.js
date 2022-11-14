@@ -2,7 +2,6 @@ const input_usuario = document.querySelector(".input_usuario");
 const botaoadd = document.querySelector(".botaoadd");
 const container_tarefa = document.querySelector(".tarefas_adicionadas");
 var  listaTarefas = JSON.parse(localStorage.getItem("listaTarefas")) || []
-console.log(listaTarefas)
 if(listaTarefas.length >0)populatarefas()
 
 function adicionar(){
@@ -11,7 +10,7 @@ function adicionar(){
  
  if( (valorImput !== "" ) && ( valorImput !== null) && (valorImput !== undefined)){
   listaTarefas.push({nome:valorImput, concluido:false})
-  atualizalocalstorage()
+  namelocalstorage()
  input_usuario.value=""
  
  populatarefas()
@@ -88,8 +87,6 @@ atualizalocalstorage()
 function atualizalocalstorage() {
   localStorage.setItem("listaTarefas",JSON.stringify(listaTarefas))
 
-
-
 }
 
 
@@ -98,13 +95,28 @@ function atualizalocalstorage() {
 
 
 
+function adicionarnome(){
+
+var InputnomeUsuario = document.querySelector("#InputnomeUsuario").value
+let container_Usuario = document.querySelector("#container_Usuario")
+let res = document.querySelector("#res1")
+container_Usuario.style.display="none"
+res.innerHTML=`To-do list de ${InputnomeUsuario}`
+res.style.borderBottom = "solid 3px #ECB0E1"
+
+}
+
+function darkmode(){
+var body = document.getElementsByTagName("body")[0]
+var prancheta = document.querySelector(".prancheta")
+body.style.backgroundColor="#1E2021"
+body.style.backgroundImage="unset"
 
 
+}
 
+function clearmode(){
+  var body = document.getElementsByTagName("body")[0]
+  body.style.backgroundImage="linear-gradient(to right,#ECB0E1,#C9DDFF)"
 
-
-
-
-
-
-
+}

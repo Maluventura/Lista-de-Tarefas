@@ -3,24 +3,22 @@
 * {
   padding: 0px;
   margin: 0px;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
 body {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: auto;
-  min-height: 100vh;
-background-color: #F4D8B0;
+  background-image: linear-gradient(to right,#ECB0E1,#C9DDFF);
+  overflow-x: hidden;
 
 }
 
 #container_tarefas{
   justify-content: center;
-  border: 2px solid rgb(223, 223, 223);
-  padding: 30px 40px;
   width: 100%;
   height: auto;
   max-width: 500px;
@@ -29,10 +27,8 @@ background-color: #F4D8B0;
 }
 
 .container_AdiconarTarefas {
-  background-color: #fff;
   padding: 30px 20px;
   border-radius: 5px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   width: 100%;
 }
@@ -49,36 +45,38 @@ background-color: #F4D8B0;
 .input_usuario {
   flex: 2;
   font-size: 16px;
-  border: 2px solid #d1d3d4;
+  border: 1px solid #a3c1f5;
+  border-bottom: 2px solid #a3c1f5;
+  text-align: center;
   border-radius: 5px;
   padding: 12px;
   padding-left: 1;
-  font-weight: 500;
   width: 50%;
+  background-color: transparent;
 }
 @media (max-width:434px)  {
   .input_usuario {
     font-size: 14px;
-    border: 2px solid #19516d;
+    border: 2px solid #a3c1f5;
     border-radius: 5px;
     font-weight:bold;
     width: 100%;
   }
 
   .container_AdiconarTarefas {
-    background-color:  #fff;
+    background-color: whitesmoke;
     border-radius: 5px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
+  
   }
   .botaoadd{
     border: none;
     background-color: rgba(137, 43, 226, 0.562);
-    width: 50px;
+    width: 25px;
     cursor: pointer;
     margin-top: 20px;
   }
@@ -86,9 +84,27 @@ background-color: #F4D8B0;
 padding: 0px;
 width: 100%;
 border: none;
+  }
+  .prancheta{
+   border-top-right-radius: 0px !important;
+   border-bottom-left-radius: 0px !important;
 
   }
+  
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .input_usuario:focus {
   outline: none;
@@ -96,11 +112,10 @@ border: none;
 }
 
 .tarefas_adicionadas {
-  background-color: #fff;
-  padding: 30px;
   margin-top: 60px;
+  margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.13);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -111,14 +126,14 @@ border: none;
 
 .item-icone{
 flex:10%;
-text-align: center;
 cursor: pointer;
 
 }
 .item-nome{
   flex:65%;
   padding: 10px;
-  border: 2px solid  rgba(137, 43, 226, 0.34);
+  border:none;
+  border-bottom:  2px solid  #a3c1f5;
 
 }
 .item-botao{
@@ -132,9 +147,11 @@ cursor: pointer;
   cursor: pointer;
 } 
 .container_tarefa{
+  margin: 10px;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  padding: 2px;
   width: 100%;
   justify-content: space-around;
 
@@ -154,17 +171,61 @@ color: grey;
 }
 .nao_clicado{
 
-  color: rgb(137, 43, 226);
+  color: #ECB0E1;
 
 }
 .prancheta{
-  background-color:#d48e2b61;
-  padding:5%;
+  background-color:whitesmoke;
+  padding:100px;
+  min-width: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+  margin-top: 10%;
   
 }
 
 
-.alfinete{
-text-align: center;
+#InputnomeUsuario{
+  background-color: transparent;
+  border: none;
+  text-align: center;
+ margin-bottom: 60px;
+ font-size: 20px;
+border-bottom: solid 3px #ECB0E1;
+}
+#container_Usuario{
+  display: flex;
+  justify-content: center;
 }
 
+
+
+#nomeUsuario:focus{
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  border-bottom: solid 3px #ECB0E1;
+} 
+.addNome{
+  cursor: pointer;
+  color: rgb(137, 43, 226);
+  
+}
+#luz{
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  margin-top: 20px;
+  justify-content: space-around;
+
+}
+img{
+  cursor: pointer;
+}
+
+#res{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+
+}
