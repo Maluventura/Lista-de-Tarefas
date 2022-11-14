@@ -10,9 +10,8 @@ function adicionar(){
  
  if( (valorImput !== "" ) && ( valorImput !== null) && (valorImput !== undefined)){
   listaTarefas.push({nome:valorImput, concluido:false})
-  namelocalstorage()
  input_usuario.value=""
- 
+
  populatarefas()
  }
  
