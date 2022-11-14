@@ -6,11 +6,10 @@ if (listaTarefas.length > 0) populatarefas();
 
 function adicionar() {
   let valorImput = input_usuario.value;
-
   if (valorImput !== "" && valorImput !== null && valorImput !== undefined) {
     listaTarefas.push({ nome: valorImput, concluido: false });
+    atualizalocalstorage();
     input_usuario.value = "";
-
     populatarefas();
   }
 }
@@ -67,7 +66,6 @@ input_usuario.addEventListener("keyup", function (event) {
     botaoadd.click();
   }
 });
-
 function marcarTarefa(index) {
   listaTarefas[index].concluido = !listaTarefas[index].concluido;
   populatarefas();
