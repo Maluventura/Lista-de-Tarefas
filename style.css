@@ -12,12 +12,11 @@ body {
   flex-direction: column;
   align-items: center;
   height: auto;
-  background-image: linear-gradient(to right,#ECB0E1,#C9DDFF);
+  background-image: linear-gradient(to right, #ecb0e1, #c9ddff);
   overflow-x: hidden;
-
 }
 
-#container_tarefas{
+#container_tarefas {
   justify-content: center;
   width: 100%;
   height: auto;
@@ -33,7 +32,7 @@ body {
   width: 100%;
 }
 
-.botaoadd{
+.botaoadd {
   border: none;
   background-color: rgba(137, 43, 226, 0.562);
   border-radius: 50px;
@@ -54,12 +53,12 @@ body {
   width: 50%;
   background-color: transparent;
 }
-@media (max-width:434px)  {
+@media (max-width: 434px) {
   .input_usuario {
     font-size: 14px;
     border: 2px solid #a3c1f5;
     border-radius: 5px;
-    font-weight:bold;
+    font-weight: bold;
     width: 100%;
   }
 
@@ -71,42 +70,30 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-  
   }
-  .botaoadd{
+  .botaoadd {
     border: none;
     background-color: rgba(137, 43, 226, 0.562);
     width: 25px;
     cursor: pointer;
     margin-top: 20px;
   }
-  #container_tarefas{
-padding: 0px;
-width: 100%;
-border: none;
+  #container_tarefas {
+    padding: 0px;
+    width: 100%;
+    border: none;
   }
-  .prancheta{
-   border-top-right-radius: 0px !important;
-   border-bottom-left-radius: 0px !important;
-
+  .corpoTodoList {
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
   }
-  
-
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .input_usuario:focus {
+  outline: none;
+  border-color: rgba(137, 43, 226, 0.5);
+}
+#InputnomeUsuario:focus {
   outline: none;
   border-color: rgba(137, 43, 226, 0.5);
 }
@@ -124,29 +111,27 @@ border: none;
   flex-direction: column;
 }
 
-.item-icone{
-flex:10%;
-cursor: pointer;
-
+.item-icone {
+  flex: 10%;
+  cursor: pointer;
 }
-.item-nome{
-  flex:65%;
+.item-nome {
+  flex: 65%;
   padding: 10px;
-  border:none;
-  border-bottom:  2px solid  #a3c1f5;
-
+  border: none;
+  border-bottom: 2px solid #a3c1f5;
 }
-.item-botao{
-  flex:10%;
+.item-botao {
+  flex: 10%;
   border: none;
 }
-.botao-delete{
+.botao-delete {
   background-color: transparent;
   border: none;
   color: rgb(137, 43, 226);
   cursor: pointer;
-} 
-.container_tarefa{
+}
+.container_tarefa {
   margin: 10px;
   display: flex;
   align-items: center;
@@ -154,79 +139,66 @@ cursor: pointer;
   padding: 2px;
   width: 100%;
   justify-content: space-around;
-
 }
-.item_clicado{
+.item_clicado {
   background-color: rgb(186, 238, 186);
-
 }
-.clicado{
+.clicado {
   color: green;
 }
 .item_clicado .item-nome {
-
-text-decoration: line-through;
-color: grey;
-
+  text-decoration: line-through;
+  color: grey;
 }
-.nao_clicado{
-
-  color: #ECB0E1;
-
+.nao_clicado {
+  color: #ecb0e1;
 }
-.prancheta{
-  background-color:whitesmoke;
-  padding:100px;
+.corpoTodoList {
+  background-color: whitesmoke;
+  padding: 100px;
   min-width: 200px;
   border-top-right-radius: 200px;
   border-bottom-left-radius: 200px;
   margin-top: 10%;
-  
 }
 
-
-#InputnomeUsuario{
+#InputnomeUsuario {
   background-color: transparent;
   border: none;
   color: black;
   text-align: center;
- margin-bottom: 60px;
- font-size: 20px;
-border-bottom: solid 3px #ECB0E1;
+  margin-bottom: 60px;
+  font-size: 20px;
+  border-bottom: solid 3px #ecb0e1;
 }
-#container_Usuario{
+#container_inputUsuario {
   display: flex;
   justify-content: center;
 }
 
-
-
-#nomeUsuario:focus{
+#nomeUsuario:focus {
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
-  border-bottom: solid 3px #ECB0E1;
-} 
-.addNome{
+  border-bottom: solid 3px #ecb0e1;
+}
+.addNome {
   cursor: pointer;
   color: rgb(137, 43, 226);
-  
 }
-#luz{
+#modoClaroeNoturno {
   display: flex;
   width: 100%;
   height: 10vh;
   margin-top: 20px;
   justify-content: space-around;
-
 }
-img{
+img {
   cursor: pointer;
 }
 
-#res{
+#container_Nomedinamico {
   display: flex;
   justify-content: center;
   font-size: 20px;
-
 }

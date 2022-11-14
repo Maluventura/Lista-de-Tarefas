@@ -1,27 +1,25 @@
 const input_usuario = document.querySelector(".input_usuario");
-const botaoadd = document.querySelector(".botaoadd");
+var botaoaddnome = document.querySelector(".botaoaddnome");
 const container_tarefa = document.querySelector(".tarefas_adicionadas");
-var  listaTarefas = JSON.parse(localStorage.getItem("listaTarefas")) || []
-if(listaTarefas.length >0)populatarefas()
+var listaTarefas = JSON.parse(localStorage.getItem("listaTarefas")) || [];
+if (listaTarefas.length > 0) populatarefas();
 
-function adicionar(){
+function adicionar() {
+  let valorImput = input_usuario.value;
 
- let valorImput = input_usuario.value ;
- 
- if( (valorImput !== "" ) && ( valorImput !== null) && (valorImput !== undefined)){
-  listaTarefas.push({nome:valorImput, concluido:false})
- input_usuario.value=""
+  if (valorImput !== "" && valorImput !== null && valorImput !== undefined) {
+    listaTarefas.push({ nome: valorImput, concluido: false });
+    input_usuario.value = "";
 
- populatarefas()
- }
- 
- }
+    populatarefas();
+  }
+}
 //  Popula atualiza as tarefas conforme lista tarefas
- function populatarefas(){
-   let tarefas = ""
-   for(let i = 0 ; i < listaTarefas.length;i++){
-    let item = listaTarefas[i]
-    if(item.concluido){
+function populatarefas() {
+  let tarefas = "";
+  for (let i = 0; i < listaTarefas.length; i++) {
+    let item = listaTarefas[i];
+    if (item.concluido) {
       tarefas += `<div class="container_tarefa item_clicado">
       <div onclick="marcarTarefa(${i})" class="item-icone" >
         <span class="material-symbols-outlined clicado">
@@ -34,9 +32,8 @@ function adicionar(){
             delete
         </button>
       </div>
-    </div>`
-
-    }else{
+    </div>`;
+    } else {
       tarefas += ` <div  class="container_tarefa">
       <div onclick="marcarTarefa(${i})" class="item-icone" >
         <span class="material-symbols-outlined nao_clicado" >
@@ -49,73 +46,57 @@ function adicionar(){
             delete
         </button>
       </div>
-    </div></div>`
+    </div></div>`;
     }
-   
-   }
-   let container_tarefas = document.querySelector(".tarefas_adicionadas")
-   container_tarefas.innerHTML=tarefas
-   }
-
-   function deletarTarefa(indice){
-      let resultado = listaTarefas.filter((item,i)=>indice!==i)
-      listaTarefas= resultado
-      populatarefas()
-      atualizalocalstorage()
-    
-   }
- 
-   input_usuario.addEventListener("keyup", function (event) {
-    //SE TECLOU ENTER (13)
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      botaoadd.click();
-    }}
-   )
-
-
-
-function marcarTarefa(index){
-listaTarefas[index].concluido=!listaTarefas[index].concluido
-populatarefas()
-atualizalocalstorage()
-
+  }
+  let container_tarefas = document.querySelector(".tarefas_adicionadas");
+  container_tarefas.innerHTML = tarefas;
 }
 
+function deletarTarefa(indice) {
+  let resultado = listaTarefas.filter((item, i) => indice !== i);
+  listaTarefas = resultado;
+  populatarefas();
+  atualizalocalstorage();
+}
+
+input_usuario.addEventListener("keyup", function (event) {
+  //SE TECLOU ENTER (13)
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    botaoadd.click();
+  }
+});
+
+function marcarTarefa(index) {
+  listaTarefas[index].concluido = !listaTarefas[index].concluido;
+  populatarefas();
+  atualizalocalstorage();
+}
 
 function atualizalocalstorage() {
-  localStorage.setItem("listaTarefas",JSON.stringify(listaTarefas))
-
+  localStorage.setItem("listaTarefas", JSON.stringify(listaTarefas));
 }
 
-
-
-
-
-
-
-function adicionarnome(){
-
-var InputnomeUsuario = document.querySelector("#InputnomeUsuario").value
-let container_Usuario = document.querySelector("#container_Usuario")
-let res = document.querySelector("#res1")
-container_Usuario.style.display="none"
-res.innerHTML=`To-do list de ${InputnomeUsuario}`
-res.style.borderBottom = "solid 3px #ECB0E1"
-
+function adicionarnome() {
+  var InputnomeUsuario = document.querySelector("#InputnomeUsuario").value;
+  let container_inputUsuario = document.querySelector(
+    "#container_inputUsuario"
+  );
+  let Nomedinamico = document.querySelector("#Nomedinamico");
+  container_inputUsuario.style.display = "none";
+  Nomedinamico.innerHTML = `To-do list de ${InputnomeUsuario}`;
+  Nomedinamico.style.borderBottom = "solid 3px #ECB0E1";
 }
 
-function darkmode(){
-var body = document.getElementsByTagName("body")[0]
-var prancheta = document.querySelector(".prancheta")
-body.style.backgroundColor="#1E2021"
-body.style.backgroundImage="unset"
-
-
+function darkmode() {
+  var body = document.getElementsByTagName("body")[0];
+  var corpoTodoList = document.querySelector(".corpoTodoList");
+  body.style.backgroundColor = "#1E2021";
+  body.style.backgroundImage = "unset";
 }
 
-function clearmode(){
-  var body = document.getElementsByTagName("body")[0]
-  body.style.backgroundImage="linear-gradient(to right,#ECB0E1,#C9DDFF)"
-
+function clearmode() {
+  var body = document.getElementsByTagName("body")[0];
+  body.style.backgroundImage = "linear-gradient(to right,#ECB0E1,#C9DDFF)";
 }
