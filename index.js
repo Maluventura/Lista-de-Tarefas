@@ -1,8 +1,13 @@
 const input_usuario = document.querySelector(".input_usuario");
-var botaoaddnome = document.querySelector(".botaoaddnome");
 const container_tarefa = document.querySelector(".tarefas_adicionadas");
+var botaoadd = document.querySelector(".botaoadd");
+var nomeUsuario = localStorage.getItem("nomeUsuario");
 var listaTarefas = JSON.parse(localStorage.getItem("listaTarefas")) || [];
 if (listaTarefas.length > 0) populatarefas();
+
+
+
+
 
 function adicionar() {
   let valorImput = input_usuario.value;
@@ -75,9 +80,8 @@ function marcarTarefa(index) {
 function atualizalocalstorage() {
   localStorage.setItem("listaTarefas", JSON.stringify(listaTarefas));
 }
-
+var InputnomeUsuario = document.querySelector("#InputnomeUsuario").value;
 function adicionarnome() {
-  var InputnomeUsuario = document.querySelector("#InputnomeUsuario").value;
   let container_inputUsuario = document.querySelector(
     "#container_inputUsuario"
   );
@@ -97,4 +101,9 @@ function darkmode() {
 function clearmode() {
   var body = document.getElementsByTagName("body")[0];
   body.style.backgroundImage = "linear-gradient(to right,#ECB0E1,#C9DDFF)";
+}
+if (nomeUsuario) {
+  Nomedinamico.innerHTML = `To-do list de ${nomeUsuario}`;
+  container_inputUsuario.style.display = "none";
+  Nomedinamico.style.borderBottom = "solid 3px #ECB0E1";
 }
